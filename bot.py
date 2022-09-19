@@ -18,7 +18,7 @@ async def main():
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
     )
-    data_manager._clear_users()
+    # data_manager._clear_users()
 
     dp = Dispatcher(storage=MemoryStorage())
     bot = Bot(TOKEN)
