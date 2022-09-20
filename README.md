@@ -23,7 +23,7 @@ python bot.py
 
 The bot works via the google translate API. At the first launch, with the start command, the bot offers to select the target translation language (into which language to translate).
 
-
+![Launch Bot](https://i.ibb.co/FnkrDBW/1.png)
 
 At the moment, there is a choice of two target translation languages: Russian and English. In the upcoming updates, the number of languages will expand.
 
@@ -31,7 +31,7 @@ You can change the translation language with the setting command, or again with 
 
 Next, the bot translates all messages coming to it.
 
-
+![Working Bot](https://i.ibb.co/yyQx1jV/2.png)
 
 Which is cool! The language written by the user for translation is determined automatically!
 
