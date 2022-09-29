@@ -38,3 +38,11 @@ Which is cool! The language written by the user for translation is determined au
 **Database**
 
 In addition, the bot works with a database based on the built-in sqlite3 module. When the bot is first launched, the user's name, his telegram ID and the translation language are recorded in the database.
+
+**Update Bot "China" - 29.09**
+1. Removed functions that were at the development stage
+2. A new "Registration date" field has been added to the database
+At the moment, the client update also updates this field.
+3. Added Chinese language translate 🔥
+
+![China](https://i.ibb.co/26Lj2Y9/upd.png)
