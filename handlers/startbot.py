@@ -7,7 +7,9 @@ from aiogram.fsm.state import State, StatesGroup
 from keyboards.simple_row import make_row_keyboard
 from data.client import data_manager
 
-language_interface = ["RU🇷🇺", "EN🇺🇸"]
+from datetime import date
+# zh-cn
+language_interface = ["RU🇷🇺", "EN🇺🇸", "CH🇨🇳"]
 
 router = Router()
 class StartBot(StatesGroup):
@@ -29,9 +31,15 @@ async def command_start_handler(message: Message, state: FSMContext):
 async def translation_language(message: Message, state: FSMContext):
     await state.update_data(lang_selection=message.text.lower())
 
+    if message.text == "CH🇨🇳":
+        lang_user = "zh-cn"
+    else:
+        lang_user = message.text[0:2].lower()
+
     data_manager.create_user(name_user=message.from_user.full_name,
                              id_user=message.from_user.id,
-                             lang_user=message.text[0:2].lower())
+                             lang_user=lang_user,
+                             created_at=date.today())
 
     await message.answer(text="Спасибо. Теперь вводи текст для перевода!",
                         reply_markup=ReplyKeyboardRemove())

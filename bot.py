@@ -9,7 +9,7 @@ from aiogram.filters.content_types import ContentTypesFilter
 from aiogram.fsm.storage.memory import MemoryStorage
 
 from config import TOKEN
-from handlers import ordering_food, startbot, translate
+from handlers import startbot, translate
 from data.client import data_manager
 
 
@@ -25,7 +25,6 @@ async def main():
     
     dp.include_router(startbot.router)
     dp.include_router(translate.router)
-    dp.include_router(ordering_food.router)
     
     await dp.start_polling(bot, allowed_updates=dp.resolve_used_update_types())
 
@@ -33,12 +32,3 @@ async def main():
 if __name__ == "__main__":
     asyncio.run(main())
 
-
-"""
-result = translator.translate('Mitä sinä teet', dest="az")
-print(result.src)
-print(result.dest)
-print(result.origin)
-print(result.text)
-print(result.pronunciation)
-"""
